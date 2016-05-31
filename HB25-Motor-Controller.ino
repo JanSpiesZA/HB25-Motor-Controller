@@ -2,13 +2,21 @@
 
 //BOARD: Arduino MEGA
 
+
+
+//STARTUP PROCEDURE:
+//Turn the Mega on BEFORE turning on the HB25 motor controllers
+
+//SHUTDOWN PROCEDURE
+//Turn the HB25 motor controllers off BEFORE turning the Mega off
+
 #include <Servo.h>
 
 //DO NOT CHANGE THESE PIN ASSIGNMENTS
 Servo leftWheelServo;
 Servo rightWheelServo;
-const int leftWheel = 13;
-const int rightWheel = 12;
+const int leftWheel = 13;   //Servo control output for HB25
+const int rightWheel = 12;  //Servo control output for HB25
 
 //The following pins are used for the encoder inputs
 const int chn_l_a = 2;  //Left wheel encoder channel A - Brown
