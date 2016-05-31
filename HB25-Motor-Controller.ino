@@ -104,8 +104,8 @@ void setup()
 {
   setupMotorControl();
   
-  Serial1.begin(115200);
-  Serial1.println("Started:");  
+  Serial.begin(115200);
+  Serial.println("Started:");  
   
     v = 0;                  
     w = 0;    
@@ -115,9 +115,9 @@ void setup()
 void loop()
 {  
     //Lees seriedata tot 'n EOL karakter gekry word
-    if (Serial1.available() >0)
+    if (Serial.available() >0)
     {
-      char c = Serial1.read();
+      char c = Serial.read();
       
       switch(c)
       {
@@ -218,13 +218,13 @@ void loop()
         
         case '?':
         {
-          Serial1.print("<?");          
-          Serial1.print(robotState[0]);
-          Serial1.print(":");
-          Serial1.print(robotState[1]);        
-          Serial1.print(":");
-          Serial1.print(robotState[2]);
-          Serial1.print(">");          
+          Serial.print("<?");          
+          Serial.print(robotState[0]);
+          Serial.print(":");
+          Serial.print(robotState[1]);        
+          Serial.print(":");
+          Serial.print(robotState[2]);
+          Serial.print(">");          
           break;
         }
       }
