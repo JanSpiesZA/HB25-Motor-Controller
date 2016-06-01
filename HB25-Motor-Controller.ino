@@ -78,7 +78,7 @@ float error_mot;
 
 //ONLY CHANGE THIS UNDER SPECIAL CIRCUMSTANCES
 //Constants for the robot's physical parameters
-const int ticks_per_rev = 36; //1632;  //Ticks per revolution
+const int ticks_per_rev = 144; //36; //1632;  //Ticks per revolution
 const float wheelbase = 392.74;      //Wheelbase of chassis in milli-meters
 const float wheel_radius = 76.58;  //Wheel radii in milli-meters
 const float wheel_circ = 2*pi*wheel_radius;
@@ -248,7 +248,7 @@ void loop()
   if (interval > delta_t)    //Enter IF after delay of delta_t seconds
   {
     if (debug)
-    {
+    {      
     Serial.print(robotState[0]);
     Serial.print(":");
     Serial.print(robotState[1]);        
@@ -261,7 +261,8 @@ void loop()
     Serial.print('\t');
     Serial.print(e_angle);
     Serial.print('\t');
-    Serial.println(w);    
+    Serial.print(w);    
+      Serial.println();
     }
     s_l = 2*pi*wheel_radius * ticks_l / PID_dc / ticks_per_rev;   //Must devide by PID_dc in order to get real delta value
     s_r = 2*pi*wheel_radius * ticks_r / PID_dc / ticks_per_rev;    
